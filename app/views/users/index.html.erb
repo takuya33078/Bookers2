@@ -1,7 +1,7 @@
 
 <div class="container px-5 px-sm-0">
  <div class="row">
-      <div class="col-md-3">
+    <div class="col-md-3">
     <h2>User info</h2>
       <%= attachment_image_tag @user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg"%>
       <table class="table">
@@ -16,14 +16,12 @@
 
       </table>
 
-      <div class="row">
+      <div>
       <%= link_to edit_user_path(@user), class: "btn btn-outline-secondary btn-block" do %>
       <i class="fas fa-user-cog"></i>
       <% end %>
       </div>
 
-
-      </table>
       <h2>New book</h2>
       <%= form_with model:@book, local:true do |f| %>
         <h4>Title</h4>
@@ -33,8 +31,8 @@
       <%= f.submit 'Create Book' , class: 'btn btn-success' %>
       <% end %>
     </div>
-    
-    <div class= "col-xs-9">
+
+    <div class= "col-md-8 offset-md-1">
     <h2>Users</h2>
     <table class='table'>
         <thead>
@@ -45,13 +43,13 @@
     <% @users.each do |user| %>
     <tr>
     <td><%= attachment_image_tag user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg",size:'20x20',format: 'no_image.jpg' %></td>
-   <th><%= user.name %><th>
+   <th><%= user.name %></th>
    <th><%= link_to"Show",user_path(user.id) %></th>
    </tr>
    <% end %>
    </table>
   </div>
 
-    
+
  </div>
 </div>

@@ -6,15 +6,11 @@
       <p>you can share and exchange  your opinions , inpressions , and emotions</p>
       <p> about various books!</p>
       <div class="btn-wrapper col-10 mx-auto">
-        <div class="row">
-        　<%= link_to new_user_session_path, class: "btn btn-info text-light" do %>
-            Log in
-          <% end %>
+        <div>
+          <%= link_to "Log in","/users/sign_in", class: "btn btn-info text-light"  %>
         </div>
-        <div class="row">
-          <%= link_to new_user_registration_path, class: "btn btn-success text-light" do %>
-            Sign up
-          <% end %>
+        <div>
+          <%= link_to "Sign up","/users/sign_up", class: "btn btn-success text-light"  %>
         </div>
       </div>
     </div>

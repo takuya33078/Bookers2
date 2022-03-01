@@ -23,7 +23,7 @@
       </table>
 
       <div class="row">
-      <%= link_to edit_user_path, class: "btn btn-outline-secondary btn-block" do %>
+      <%= link_to edit_user_path(@user), class: "btn btn-outline-secondary btn-block" do %>
       <i class="fas fa-user-cog"></i>
       <% end %>
       </div>
@@ -31,7 +31,7 @@
 
       </table>
       <h2>New book</h2>
-      <%= form_with model:@book, local:true do |f| %>
+      <%= form_with model:@newbook, local:true do |f| %>
         <h4>Title</h4>
       <%= f.text_field :title %>
         <h4>Opinion</h4>
@@ -47,7 +47,9 @@
        <tbody>
          <tr>
            <td>
-              <%= attachment_image_tag @book.user, :profile_image ,size: "40x40", farmat: 'jpg', fallback: "no_image.jpg" %>
+              <%= link_to user_path(@user) do %> 
+              <%= attachment_image_tag @user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg"%>
+              <% end %>
               <%= link_to @book.user.name , user_path(@book.user.id)%>
 
            </td>
